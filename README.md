@@ -1,12 +1,20 @@
-## Introduction
-The "eHelp" (enhnaced-Help) package allow users to include "a-la-docstring" comments in their own functions and utilize the help() function to automatically provide documentation within the R session.
+# eHelp
 
-Inspired by Python's a-la-docstring comments and the existant "docstring" R package (https://cran.r-project.org/package=docstring), the package "eHelp" attempts to offer similar functionalities by allowing comments "a-la-docstring" style to be displayed as help in user-defined functions.
+<!--
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/ehelp)](https://cran.r-project.org/package=ehelp)
+[![Downloads](https://cranlogs.r-pkg.org/badges/ehelp)](https://cran.r-project.org/package=ehelp)
+-->
+
+## Introduction
+The "eHelp" (enhnaced-Help) package allows users to include "a-la-docstring" comments in their own functions and utilize the help() function to automatically provide documentation within an R session.
+
+Inspired by Python's a-la-docstring comments and the existant "docstring" R package [1], the package "eHelp" attempts to offer similar functionalities by allowing comments "a-la-docstring" style to be displayed as help in user-defined functions.
 
 ### Rationale
-Documenting code is among the "best practices" to follow when developing code in a professional manner, and even when guided  generation of documentation is possible while developing R packages, we still belive that offering users a tool that allows them to document their functions using docsting comments is useful.
+Documenting code is among the "best practices" followed when developing code in a professional manner, and even when guided generation of documentation is possible while developing R packages, we still belive that offering users a tool that allows them to document their functions via docstring comments is useful.
 
-Moreover it can be used for and instructing and teaching best practices while training coders that are just starting.
+Moreover it can be used for instructing and teaching best practices while training coders that are just starting.
+Or, in this case the eHelp package could help package developer while prototyping their own packages, as eHelp will allow them to explore how the the help of the functions defined within their package will look like and even save this documentation in files of different formats.
 
 The inclusion of "docstring" comments are an useful and easy way of allowing programmers to include comments and at the same time document their codes.
 Unfortunately such functionality is not present in the R core and basic features for user-defined functions.
@@ -14,7 +22,7 @@ Unfortunately such functionality is not present in the R core and basic features
 The main reason why we decided to create this package is because we noticed several issues with the already available in R "docstring" package:
 * we have noticed that the 'docstring' package does not work with more than one function defined within a script
 * sometimes the documentation is not updated even when the function is reloaded (ie. Windows OS)
-* the package hasn't been updated or mantained since its creation in 2017 (https://github.com/dasonk/docstring)
+* the package hasn't been updated or mantained since its creation in 2017 [2]
 * we prefered to overload the "help()" function instead of the "?" one, which we find more frequently used
 * another advantage of using the "help()" function, is that tab-completion works and we have overload the function so that it cascades down to the R utils::help() function when the user-defined function is not present in the working environment.
 
@@ -33,6 +41,7 @@ The following keywords can be used to decorate and provide details as comments i
 @fnName :  provides the name of the function
 @param  :  list the arguments and its description of the arguments expected by the function
 @descr  :  general description of the function
+@return :  description of what the function returns
 @usage  :  how the function is called
 @author :  name of the author(s) of the function
 @email  :  contact information of the author(s)
@@ -48,12 +57,47 @@ Some keywords are explicited ignored, such as: "@keyword internal", "@importFrom
 We have included extended functionalities to the "ehelp()" function, which allows the user to display the information about the requested function using highlighting features.
 For such functionalities to work you will have to use
    ```ehelp(Name.of.Function, coloring=TRUE)```
-and it requires that "crayon" package is available in the system.
+this requires that the "crayon" package [3] is available (installed) in the system.
+
+
+### Saving the documentation of the functions to file in different formats
+Another additional feature of the ehelp() function, is that it can be
+instructed to create a file with the content of the help for a given function
+in file utilizing an specific file format for the output.
+This is achived by indicating the argument ```output```  and one of the
+following values:
+
+	output	|	file format
+	------	|	-----------
+	txt	|	plain text
+	ascii	|	similar to plain txt but including ESCape codes like the ones used for coloring the output in the R session
+	html	|	HTML format, the user can open the output with any web browser
+	latex	|	LaTeX format
+	markdown|	Markdown format
+	---------------------------
+
+When this option is used, the output generated will be saved in the current
+working directory in a file named employing the following convention:
+
+	```NameOfTheFunction-eHelp.FMT```
+
+where ```NameOfTheFunction``` is the name of the function and ```FMT``` is the
+correspodning extension format selected.
+
+Capitalized options are also available and when used, not only the help associated
+with the function is saved in the file but also the actual listing of the
+function too.
+
 
 
 ## Installation
 
 For using the "eHelp" package, first you will need to install it.
+
+Thes table version can be downloaded from the CRAN repository:
+```
+install.packages("ehelp")
+```
 
 To obtain the development version you can get it from the github repository, i.e.
 ```
@@ -170,3 +214,12 @@ __Author:__	   author
 __### Usage:__
 	 myTestFn(x, y, z, t = 0)
 ```
+
+
+
+### References
+[1] https://cran.r-project.org/package=docstring
+
+[2] https://github.com/dasonk/docstring
+
+[3] https://github.com/r-lib/crayon
