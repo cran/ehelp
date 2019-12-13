@@ -67,19 +67,19 @@ in file utilizing an specific file format for the output.
 This is achived by indicating the argument ```output```  and one of the
 following values:
 
-	output	|	file format
-	------	|	-----------
-	txt	|	plain text
-	ascii	|	similar to plain txt but including ESCape codes like the ones used for coloring the output in the R session
-	html	|	HTML format, the user can open the output with any web browser
-	latex	|	LaTeX format
-	markdown|	Markdown format
-	---------------------------
+output	 | file format
+------	 | -----------
+txt	 | plain text
+ascii	 | similar to plain txt but including ESCape codes like the ones used for coloring the output in the R session
+html	 | HTML format, the user can open the output with any web browser
+latex	 | LaTeX format
+markdown | Markdown format
+---------------------------
 
 When this option is used, the output generated will be saved in the current
 working directory in a file named employing the following convention:
 
-	```NameOfTheFunction-eHelp.FMT```
+	NameOfTheFunction-eHelp.FMT
 
 where ```NameOfTheFunction``` is the name of the function and ```FMT``` is the
 correspodning extension format selected.
@@ -198,7 +198,7 @@ Author:	   author
 
 It is also possible to invoque the "ehelp()" function directly, and in that way further options are available:
 ```
-> help(myTestFn, coloring=TRUE)
+> ehelp(myTestFn, coloring=TRUE)
 __Function Name:__	   myTestFn 
 
  This is just an example of a dummy fn 
@@ -215,6 +215,29 @@ __### Usage:__
 	 myTestFn(x, y, z, t = 0)
 ```
 
+
+Additionaly is possible to use ehelp() for saving of documentation of a
+function into a file with an specific file format, this is acieved by specifying the ```output``` argument in ehelp().
+Available formats are:
+txt (plain-text), ascii (text with ESC-codes for coloring), latex, html, and markdown.
+Additionally, capitalized versions of these formats, will also include
+the listing of the function, eg.
+
+```
+ehelp(myTestFn, output="latex")
+```
+**myTestFn-eHelp.tex written to CURRENT_DIR**
+...
+
+```
+ehelp(myTestFn, output="TXT")
+
+ehelp(myTestFn, coloring=TRUE, output="HTML")
+
+ehelp(myTestFn, coloring=TRUE, output="ASCII")
+
+ehelp(myTestFn, coloring=TRUE, output="markdown")
+```
 
 
 ### References

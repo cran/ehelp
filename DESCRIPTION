@@ -1,6 +1,6 @@
 Package: ehelp
 Title: Enhanced Help to Enable "Docstring"-Comments in Users Functions
-Version: 1.1
+Version: 1.1.1
 Authors@R: 
     person(given = "Marcelo",
            family = "Ponce",
@@ -18,6 +18,6 @@ RoxygenNote: 6.1.99.9001
 Suggests: testthat (>= 2.1.0), knitr, rmarkdown, crayon
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-11-12 19:47:00 UTC; marcelo
+Packaged: 2019-12-13 14:52:41 UTC; mjponce
 Repository: CRAN
-Date/Publication: 2019-11-12 20:10:02 UTC
+Date/Publication: 2019-12-13 15:30:02 UTC
