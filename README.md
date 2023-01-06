@@ -2,8 +2,10 @@
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/ehelp)](https://cran.r-project.org/package=ehelp)
-[![CRAN checks](https://cranchecks.info/badges/worst/ehelp)](https://cranchecks.info/pkgs/ehelp)
+[![cran checks](https://badges.cranchecks.info/worst/ehelp.svg)](https://cran.r-project.org/web/checks/check_results_ehelp.html)
+[![cran checks](https://badges.cranchecks.info/summary/ehelp.svg)](https://cran.r-project.org/web/checks/check_results_ehelp.html)
 [![Downloads last.mnth](https://cranlogs.r-pkg.org/badges/ehelp)](https://cran.r-project.org/package=ehelp)
+<!--[![CRAN checks](https://cranchecks.info/badges/worst/ehelp)](https://cranchecks.info/pkgs/ehelp) -->
 <!-- badges: end -->
 
 ## Introduction
@@ -266,10 +268,34 @@ ehelp(myTestFn, coloring=TRUE, output="ASCII")
 ehelp(myTestFn, coloring=TRUE, output="markdown")
 ```
 
+
+### How to Cite this Package
+```R
+> citation("ehelp")
+
+To cite package ‘ehelp’ in publications use:
+
+  Marcelo Ponce (2019). ehelp: Enhanced Help to Enable
+  "Docstring"-Comments in Users Functions. R package version 1.1.1.
+  https://CRAN.R-project.org/package=ehelp
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {ehelp: Enhanced Help to Enable "Docstring"-Comments in Users Functions},
+    author = {Marcelo Ponce},
+    year = {2019},
+    note = {R package version 1.1.1},
+    url = {https://CRAN.R-project.org/package=ehelp},
+  }
+```
+
+
 ### Stats
 <!-- badges: start -->
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version-last-release/ehelp)](https://cran.r-project.org/package=ehelp)
-[![CRAN checks](https://cranchecks.info/badges/worst/ehelp)](https://cranchecks.info/pkgs/ehelp)
+[![cran checks](https://badges.cranchecks.info/worst/ehelp.svg)](https://cran.r-project.org/web/checks/check_results_ehelp.html)
+[![cran checks](https://badges.cranchecks.info/summary/ehelp.svg)](https://cran.r-project.org/web/checks/check_results_ehelp.html)
 [![Downloads last.mnth](https://cranlogs.r-pkg.org/badges/ehelp)](https://cran.r-project.org/package=ehelp)
 [![Downloads last.day](https://cranlogs.r-pkg.org/badges/last-week/ehelp)](https://cran.r-project.org/package=ehelp)
 [![Downloads last.day](https://cranlogs.r-pkg.org/badges/last-day/ehelp)](https://cran.r-project.org/package=ehelp)
